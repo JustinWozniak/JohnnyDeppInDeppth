@@ -4,6 +4,8 @@ import AppRoute from './utils/AppRoute';
 import ScrollReveal from './utils/ScrollReveal';
 import ReactGA from 'react-ga';
 
+import Bio from '../src/views/Bio'
+
 // Layouts
 import LayoutDefault from './layouts/LayoutDefault';
 
@@ -37,6 +39,7 @@ const App = () => {
       children={() => (
         <Switch>
           <AppRoute exact path="/" component={Home} layout={LayoutDefault} />
+          <AppRoute exact path="/bio" component={Bio} layout={LayoutDefault} />
         </Switch>
       )} />
   );

@@ -112,7 +112,7 @@ const Header = ({
                       navPosition && `header-nav-${navPosition}`
                     )}>
                     <li>
-                      <Link to="#0" onClick={closeMenu}>Bio</Link>
+                      <Link to="/bio" onClick={closeMenu}>Bio</Link>
                     </li>
                     <li>
                       <Link to="#0" onClick={closeMenu}>Movies</Link>
