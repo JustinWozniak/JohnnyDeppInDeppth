@@ -8,7 +8,8 @@
 @import "core/abstracts/functions",
 		"settings/settings",
         "core/abstracts/mixins",
-        'core/abstracts/include-media';
+		'core/abstracts/include-media',
+		'core/base/_utilities';
 
 /*--------------------------------------------------------------
 # Normalize
@@ -126,3 +127,14 @@
 # Helpers
 --------------------------------------------------------------*/
 @import "core/base/helpers";
+
+
+@import "core/elements/_bg-video";
+@import "core/elements/_button";
+@import "core/elements/_card";
+@import "core/elements/_composition";
+@import "core/elements/_feature-box";
+@import "core/elements/_popup";
+@import "core/elements/_story";
+
+@import "core/base/_utilities";
