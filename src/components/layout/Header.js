@@ -85,7 +85,7 @@ const Header = ({
             'site-header-inner',
             bottomDivider && 'has-bottom-divider'
           )}>
-          {/* <Logo /> */}
+          <Logo />
           {!hideNav &&
             <>
               <button
@@ -115,7 +115,7 @@ const Header = ({
                       <Link to="/bio" onClick={closeMenu}>Bio</Link>
                     </li>
                     <li>
-                      <Link to="#0" onClick={closeMenu}>Movies</Link>
+                      <Link to="/movies" onClick={closeMenu}>Movies</Link>
                     </li>
                     <li>
                       <Link to="#0" onClick={closeMenu}>Characters</Link>
