@@ -1,72 +1,52 @@
 import React from 'react';
-import babydepp from '../../assets/images/johnnybaby.jpg';
-import babydepp2 from '../../assets/images/johnnybaby2.jpg';
-import babydepp3 from '../../assets/images/johnnybaby3.jpg';
 
 import { Carousel } from "react-responsive-carousel";
+import axios from 'axios';
 
 
+class CarouselComponent extends React.Component {
+  state = {
+    movies: []
+  };
 
-export default () => (
-  <Carousel autoPlay>
-    <div>
-      <img alt="" src="http://lorempixel.com/output/cats-q-c-640-480-1.jpg" />
+  async componentDidMount() {
+    const { data: movies } = await axios.get(
+
+      ' https://api.themoviedb.org/3/person/85/movie_credits?api_key=' + process.env.REACT_APP_API_KEY + '&language=en-US'
+    );
+    this.setState({ movies: movies.cast });
+  
+    let movieImageUrls = []
+    let movieNumbers = []
+    let trendingMoviesCount = this.state.movies.length
+    for (let i = 0; i < trendingMoviesCount; i++) {
+      movieImageUrls.push(movies.cast[i].poster_path);
+      movieNumbers.push(movies.cast[i].id)
+     
+    } 
+  }
+
+  render(){
+    const posterPath = "https://image.tmdb.org/t/p/w500/"
+    return(
+   <div>
+      {this.state.movies.map((images, index) => {
+        console.log(images.poster_path)
+        return(
+        <div>
+    <Carousel>
+      <img alt={index} src={posterPath +images.poster_path} />
       <p className="legend">Legend 1</p>
-    </div>
-    <div>
-      <img alt="" src="http://lorempixel.com/output/cats-q-c-640-480-2.jpg" />
-      <p className="legend">Legend 2</p>
-    </div>
-    <div>
-      <img alt="" src="http://lorempixel.com/output/cats-q-c-640-480-3.jpg" />
-      <p className="legend">Legend 3</p>
-    </div>
-    <div>
-      <img alt="" src="http://lorempixel.com/output/cats-q-c-640-480-4.jpg" />
-      <p className="legend">Legend 4</p>
-    </div>
-    <div>
-      <img alt="" src="http://lorempixel.com/output/cats-q-c-640-480-5.jpg" />
-      <p className="legend">Legend 5</p>
-    </div>
-    <div>
-      <img alt="" src="http://lorempixel.com/output/cats-q-c-640-480-6.jpg" />
-      <p className="legend">Legend 6</p>
-    </div>
-    <div>
-      <img alt="" src="http://lorempixel.com/output/cats-q-c-640-480-7.jpg" />
-      <p className="legend">Legend 7</p>
-    </div>
-    <div>
-      <img alt="" src="http://lorempixel.com/output/cats-q-c-640-480-8.jpg" />
-      <p className="legend">Legend 8</p>
-    </div>
-    <div>
-      <img alt="" src="http://lorempixel.com/output/cats-q-c-640-480-9.jpg" />
-      <p className="legend">Legend 9</p>
-    </div>
-    <div>
-      <img alt="" src="http://lorempixel.com/output/cats-q-c-640-480-10.jpg" />
-      <p className="legend">Legend 10</p>
-    </div>
-    <div>
-      <img alt="" src="http://lorempixel.com/output/cats-q-c-640-480-11.jpg" />
-      <p className="legend">Legend 11</p>
-    </div>
-    <div>
-      <img alt="" src="http://lorempixel.com/output/cats-q-c-640-480-12.jpg" />
-      <p className="legend">Legend 12</p>
-    </div>
-    <div>
-      <img alt="" src="http://lorempixel.com/output/cats-q-c-640-480-13.jpg" />
-      <p className="legend">Legend 13</p>
-    </div>
-    <div>
-      <img alt="" src="http://lorempixel.com/output/cats-q-c-640-480-14.jpg" />
-      <p className="legend">Legend 14</p>
-    </div>
-  </Carousel>
-);
+      
+    </Carousel>
+</div>    
+        )}
+    
+
+    )}</div>
+    )}
+}
+    export default CarouselComponent
 
 
 
