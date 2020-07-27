@@ -7,7 +7,7 @@ import { useAsync } from 'react-async';
 
 const johnnyBio = 'https://api.themoviedb.org/3/person/85?api_key=' + process.env.REACT_APP_API_KEY + '&language=en-US';
 
-// Then we'll fetch user data from this API
+// Then we'll johnny data from this API
 const getJohnnysBioTask = async () =>
 	await fetch(johnnyBio)
 		.then((res) => (res.ok ? res : Promise.reject(res)))

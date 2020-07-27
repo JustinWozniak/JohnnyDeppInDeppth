@@ -5,13 +5,14 @@ import ScrollReveal from './utils/ScrollReveal';
 import ReactGA from 'react-ga';
 
 import Bio from '../src/views/Bio'
+import Movies from '../src/views/Movies'
 
 // Layouts
 import LayoutDefault from './layouts/LayoutDefault';
 
 // Views 
 import Home from './views/Home';
-import Movies from './views/Movies';
+
 
 // Initialize Google Analytics
 ReactGA.initialize(process.env.REACT_APP_GA_CODE);
