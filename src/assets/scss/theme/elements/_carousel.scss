@@ -1,0 +1,19 @@
+.carouselWrapper {
+    padding: 10%;
+
+    @include respond(phone) {
+        margin-top: 15%;
+    }
+}
+
+.carousel * {
+    height: 100%;
+  
+}
+
+.carousel {
+    margin-top: -24%;
+    margin-bottom: -23%;
+
+  
+}
