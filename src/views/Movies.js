@@ -6,7 +6,7 @@ const Movies = (props) => {
 	
 
 	return (
-		<div>
+		<div className='carouselWrapper'>
         <CarouselComponent />
 		</div>
     )
