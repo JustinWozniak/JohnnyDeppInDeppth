@@ -9,12 +9,12 @@ class CarouselComponent extends React.Component {
 
 	async componentDidMount() {
 		const { data: movies } = await axios.get(
-			' https://api.themoviedb.org/3/person/85/movie_credits?api_key=' +
+			' 	https://api.themoviedb.org/3/person/85/combined_credits?api_key=' +
 				process.env.REACT_APP_API_KEY +
 				'&sort_by=release_date.desc'
 		);
 		this.setState({ movies: movies.cast });
-		
+
 		let movieImageUrls = [];
 		let movieTitles = [];
 		let johnnyCharacter = [];
@@ -51,7 +51,29 @@ class CarouselComponent extends React.Component {
 				voteaverages: vote_average,
 				moviesId: movies_id
 			});
-		}	console.log(this.state)
+		} //end of loop
+		// this.fetchMoviesData(58);
+	}
+
+	fetchMoviesData(moviesIdtoFetch) {
+		fetch(
+			`https://api.themoviedb.org/3/movie/${moviesIdtoFetch}?api_key=abb02fcc5fa2b30465f423cf48076a7e&language=en-US`
+		)
+			.then((response) => response.json())
+			.then((data) =>
+				this.setState({
+					budget: data.budget,
+					genres: data.genres,
+					belongs_to_collection: data.belongs_to_collection,
+					homepage: data.homepage,
+					original_language: data.original_language,
+					production_companies: data.production_companies,
+					revenue: data.revenue,
+					runtime: data.runtime,
+					status: data.status,
+					tagline: data.tagline
+				})
+			);
 	}
 
 	render() {
@@ -60,23 +82,31 @@ class CarouselComponent extends React.Component {
 		let moviesoverview = this.state.overviews;
 		let datereleased = this.state.releasedates;
 		let fanPopularity = this.state.popularitys;
-
+		let movieIdToFetch = this.state.moviesId;
 		if (!images) return <div>Please wait while images load....</div>;
 
 		// #3. Finally, render the `<Carousel />` with the state's images.
 		return (
-			<Carousel autoPlay 
-			infiniteLoop="true" 
-			dots="false" 
-			showIndicators={false}>
+			<Carousel
+				// autoPlay
+				infiniteLoop="true"
+				dots="false"
+				showIndicators={false}
+				interval={10000}
+				onChange={this.fetchMoviesData(movieIdToFetch)}
+			>
 				{images.map((image, name) => {
 					let formattedDate = Moment(datereleased[name]).format('MMM D YYYY');
 					return (
-						<div>
+						<div key={movieIdToFetch[name]}>
 							<img src={image} alt="Johnny Covers" />
 							<h1>{originaltitle[name]}</h1>
+							<h3>Status: {this.state.status}</h3>
 							<p>{moviesoverview[name]}</p>
-							<p>Release Date: {formattedDate}</p> <p>Fan Popularity: {fanPopularity[name]}</p>
+							<p>Release Date: {formattedDate}</p> <p>Fan Popularity: {fanPopularity[name]}%</p>
+							<p>Movies Revenue: {this.state.revenue} Million $</p>
+							<p>Movies Runtime: {this.state.runtime} mins</p>
+							<a href={this.state.homepage}>Movie Homepage</a>
 						</div>
 					);
 				})}
