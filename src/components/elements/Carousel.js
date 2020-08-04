@@ -14,7 +14,7 @@ class CarouselComponent extends React.Component {
 				'&sort_by=release_date.desc'
 		);
 		this.setState({ movies: movies.cast });
-
+		
 		let movieImageUrls = [];
 		let movieTitles = [];
 		let johnnyCharacter = [];
@@ -24,6 +24,7 @@ class CarouselComponent extends React.Component {
 		let release_date = [];
 		let title = [];
 		let vote_average = [];
+		let movies_id = [];
 
 		let trendingMoviesCount = this.state.movies.length;
 		for (let i = 0; i < trendingMoviesCount; i++) {
@@ -38,6 +39,7 @@ class CarouselComponent extends React.Component {
 			release_date.push(movies.cast[i].release_date);
 			title.push(movies.cast[i].title);
 			vote_average.push(movies.cast[i].vote_average);
+			movies_id.push(movies.cast[i].id);
 
 			this.setState({
 				images: movieImageUrls,
@@ -46,9 +48,10 @@ class CarouselComponent extends React.Component {
 				popularitys: popularity,
 				releasedates: release_date,
 				titles: title,
-				voteaverages: vote_average
+				voteaverages: vote_average,
+				moviesId: movies_id
 			});
-		}
+		}	console.log(this.state)
 	}
 
 	render() {
@@ -62,7 +65,10 @@ class CarouselComponent extends React.Component {
 
 		// #3. Finally, render the `<Carousel />` with the state's images.
 		return (
-			<Carousel autoPlay infiniteLoop="true" dots="false" showIndicators={false}>
+			<Carousel autoPlay 
+			infiniteLoop="true" 
+			dots="false" 
+			showIndicators={false}>
 				{images.map((image, name) => {
 					let formattedDate = Moment(datereleased[name]).format('MMM D YYYY');
 					return (
