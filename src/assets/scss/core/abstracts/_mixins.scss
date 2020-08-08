@@ -1,7 +1,7 @@
 // Font Family
-// @mixin font-family($elem) {
-// 	font-family: unquote(get-font-family($elem));
-// }
+@mixin font-family($elem) {
+	font-family: unquote(get-font-family($elem));
+}
 
 // Font-size + Line-height + Kerning
 @mixin font-size($elem) {
@@ -17,114 +17,164 @@
 
 // Anchor aspect
 @mixin anchor-aspect($type: 'main', $layout: false) {
-	@if ( $type == 'main' ) { // Base
-		@if ( $layout == 'inverse' ) {
+	@if ($type=='main') {
+
+		// Base
+		@if ($layout=='inverse') {
 			color: color(link-inverse);
-		} @else {
+		}
+
+		@else {
 			color: color(link);
 		}
+
 		text-decoration: $link-main--decoration;
 
 		&:hover,
 		&:active {
-			@if ( $layout == 'inverse' ) {
+			@if ($layout=='inverse') {
 				color: color(link-hover-inverse);
-			} @else {
+			}
+
+			@else {
 				color: color(link-hover);
 			}
+
 			outline: 0;
 			text-decoration: $link-main--decoration-hover;
 		}
-	} @else if ($type == 'header') {
-		@if ( $layout == 'inverse' ) {
+	}
+
+	@else if ($type=='header') {
+		@if ($layout=='inverse') {
 			color: color(header-link-inverse);
-		} @else {
+		}
+
+		@else {
 			color: color(header-link);
 		}
+
 		text-decoration: $link-header--decoration;
 
 		&:hover,
 		&:active {
-			@if ( $layout == 'inverse' ) {
+			@if ($layout=='inverse') {
 				color: color(header-link-hover-inverse);
-			} @else {
+			}
+
+			@else {
 				color: color(header-link-hover);
 			}
+
 			text-decoration: $link-header--decoration-hover;
 		}
-	} @else if ($type == 'header-mobile') {
+	}
+
+	@else if ($type=='header-mobile') {
 		color: color(header-link-mobile);
 
 		&:hover,
 		&:active {
 			color: color(header-link-mobile-hover);
 		}
-	} @else if ($type == 'footer') {
-		@if ( $layout == 'inverse' ) {
+	}
+
+	@else if ($type=='footer') {
+		@if ($layout=='inverse') {
 			color: color(footer-link-inverse);
-		} @else {
+		}
+
+		@else {
 			color: color(footer-link);
 		}
+
 		text-decoration: $link-footer--decoration;
 
 		&:hover,
 		&:active {
-			@if ( $layout == 'inverse' ) {
+			@if ($layout=='inverse') {
 				color: color(footer-link-hover-inverse);
-			} @else {
+			}
+
+			@else {
 				color: color(footer-link-hover);
 			}
+
 			text-decoration: $link-footer--decoration-hover;
 		}
-	} @else if ($type == 'footer-block') {
-		@if ( $layout == 'inverse' ) {
+	}
+
+	@else if ($type=='footer-block') {
+		@if ($layout=='inverse') {
 			color: color(footer-block-link-inverse);
-		} @else {
+		}
+
+		@else {
 			color: color(footer-block-link);
 		}
+
 		text-decoration: $link-footer-block--decoration;
 
 		&:hover,
 		&:active {
-			@if ( $layout == 'inverse' ) {
+			@if ($layout=='inverse') {
 				color: color(footer-block-link-hover-inverse);
-			} @else {
+			}
+
+			@else {
 				color: color(footer-block-link-hover);
 			}
+
 			text-decoration: $link-footer-block--decoration-hover;
 		}
-	} @else if ($type == 'button-link') {
-		@if ( $layout == 'inverse' ) {
+	}
+
+	@else if ($type=='button-link') {
+		@if ($layout=='inverse') {
 			color: color(button-link-inverse);
-		} @else {
+		}
+
+		@else {
 			color: color(button-link);
 		}
+
 		text-decoration: $link-button--decoration;
 
 		&:hover,
 		&:active {
-			@if ( $layout == 'inverse' ) {
+			@if ($layout=='inverse') {
 				color: color(button-link-hover-inverse);
-			} @else {
+			}
+
+			@else {
 				color: color(button-link-hover);
 			}
+
 			text-decoration: $link-button--decoration-hover;
 		}
-	} @else if ($type == 'func-link') {
-		@if ( $layout == 'inverse' ) {
+	}
+
+	@else if ($type=='func-link') {
+		@if ($layout=='inverse') {
 			color: color(func-link-inverse);
-		} @else {
+		}
+
+		@else {
 			color: color(func-link);
 		}
+
 		text-decoration: $link-func--decoration;
 
 		&:hover,
 		&:active {
-			@if ( $layout == 'inverse' ) {
+			@if ($layout=='inverse') {
 				color: color(func-link-hover-inverse);
-			} @else {
+			}
+
+			@else {
 				color: color(func-link-hover);
 			}
+
 			text-decoration: $link-func--decoration-hover;
 		}
 	}
@@ -133,15 +183,18 @@
 @mixin divider-mix($layout: false) {
 	display: block;
 	height: 1px;
-	@if ( $layout == 'inverse' ) {
+
+	@if ($layout=='inverse') {
 		background: color-border(divider-inverse);
-	} @else {
+	}
+
+	@else {
 		background: color-border(divider);
 	}
 }
 
 @mixin divider($type: false, $layout: false) {
-	@if ( $type == 'before' ) {
+	@if ($type=='before') {
 		position: relative;
 
 		&::before {
@@ -152,7 +205,9 @@
 			width: 100%;
 			@include divider-mix($layout);
 		}
-	} @else if ($type == 'after') {
+	}
+
+	@else if ($type=='after') {
 		position: relative;
 
 		&::after {
@@ -163,7 +218,9 @@
 			width: 100%;
 			@include divider-mix($layout);
 		}
-	} @else {
+	}
+
+	@else {
 		@include divider-mix($layout);
 	}
 }
@@ -183,39 +240,60 @@
 	height: $height;
 	background-image: url(../../../images/#{$file});
 	background-repeat: no-repeat;
-	@if( unit( $height ) == '%' ) {
+
+	@if(unit($height)=='%') {
 		background-size: contain;
-	} @else {
+	}
+
+	@else {
 		background-size: auto;
 	}
-	@if ( $hoffset ) {
+
+	@if ($hoffset) {
 		left: calc(50% + #{$hoffset});
-	} @else {
+	}
+
+	@else {
 		left: 50%;
 	}
-	@if ( $vpos == 'top' ) {
-		@if ( $voffset ) {
+
+	@if ($vpos=='top') {
+		@if ($voffset) {
 			top: #{$voffset};
-		} @else {
+		}
+
+		@else {
 			top: 0;
 		}
+
 		background-position: center top;
 		transform: translate(-50%);
-	} @else if ( $vpos == 'bottom' ) {
-		@if ( $voffset ) {
+	}
+
+	@else if ($vpos=='bottom') {
+		@if ($voffset) {
 			bottom: #{$voffset};
-		} @else {
+		}
+
+		@else {
 			bottom: 0;
 		}
+
 		background-position: center bottom;
 		transform: translate(-50%);
-	} @else {
+	}
+
+	@else {
 		background-position: center;
-		@if ( $voffset ) {
+
+		@if ($voffset) {
 			top: calc(50% + #{$voffset});
-		} @else {
+		}
+
+		@else {
 			top: 50%;
 		}
+
 		transform: translate(-50%, -50%);
 	}
 }
@@ -242,31 +320,50 @@ ORDER: Base + typography > general layout + grid > page layout > components
 1em = 16px EM BETTER TO USE THEN REM
 */
 @mixin respond($breakpoint) {
-    @if $breakpoint == phone {
-        @media only screen and (max-width: 37.5em) { @content };    //600px
-    }
-    @if $breakpoint == tab-port {
-        @media only screen and (max-width: 56.25em) { @content };     //900px
-    }
-    @if $breakpoint == tab-land {
-        @media only screen and (max-width: 75em) { @content };    //1200px
-    }
-    @if $breakpoint == big-desktop {
-        @media only screen and (min-width: 112.5em) { @content };    //1800
-    }
+	@if $breakpoint==phone {
+		@media only screen and (max-width: 37.5em) {
+			@content
+		}
+
+		; //600px
+	}
+
+	@if $breakpoint==tab-port {
+		@media only screen and (max-width: 56.25em) {
+			@content
+		}
+
+		; //900px
+	}
+
+	@if $breakpoint==tab-land {
+		@media only screen and (max-width: 75em) {
+			@content
+		}
+
+		; //1200px
+	}
+
+	@if $breakpoint==big-desktop {
+		@media only screen and (min-width: 112.5em) {
+			@content
+		}
+
+		; //1800
+	}
 }
 
 @mixin absCenter {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 @mixin clearfix {
-    &::after {
-        content: "";
-        display: table;
-        clear: both;
-    }
+	&::after {
+		content: "";
+		display: table;
+		clear: both;
+	}
 }
