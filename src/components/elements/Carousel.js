@@ -11,7 +11,7 @@ class CarouselComponent extends React.Component {
 		const { data: movies } = await axios.get(
 			' 	https://api.themoviedb.org/3/person/85/combined_credits?api_key=' +
 				process.env.REACT_APP_API_KEY +
-				'&sort_by=release_date.desc'
+				`&sort_by=primary_release_date.desc`
 		);
 		this.setState({ movies: movies.cast });
 
@@ -43,6 +43,8 @@ class CarouselComponent extends React.Component {
 
 		
 		} //end of loop
+	
+		
 		this.setState({
 			images: movieImageUrls,
 			originaltitle: original_title,

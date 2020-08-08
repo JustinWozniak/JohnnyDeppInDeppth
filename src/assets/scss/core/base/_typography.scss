@@ -12,14 +12,14 @@ button,
 input,
 select,
 textarea {
-	@include font-family(base);
-	@include font-weight(base);
+	// @include font-family(base);
+	// @include font-weight(base);
 }
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-	@include font-family(heading);
-	@include font-weight(heading);
+	// @include font-family(heading);
+	// @include font-weight(heading);
 	clear: both;
 	color: color(heading);
 	word-wrap: break-word;
@@ -164,7 +164,7 @@ pre .h3,
 pre .h4,
 pre .h5,
 pre .h6  {
-	@include font-family(pre);
+	// @include font-family(pre);
 }
 
 pre, code, kbd, tt, var {
@@ -181,8 +181,8 @@ pre {
 }
 
 code, kbd, tt, var {
-	@include font-family(code);
-	@include font-size(code);
+	// @include font-family(code);
+	// @include font-size(code);
 	padding: $spacing--code-v $spacing--code-h;
 }
 
