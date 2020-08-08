@@ -41,17 +41,18 @@ class CarouselComponent extends React.Component {
 			vote_average.push(movies.cast[i].vote_average);
 			movies_id.push(movies.cast[i].id);
 
-			this.setState({
-				images: movieImageUrls,
-				originaltitle: original_title,
-				overviews: overview,
-				popularitys: popularity,
-				releasedates: release_date,
-				titles: title,
-				voteaverages: vote_average,
-				moviesId: movies_id
-			});
+		
 		} //end of loop
+		this.setState({
+			images: movieImageUrls,
+			originaltitle: original_title,
+			overviews: overview,
+			popularitys: popularity,
+			releasedates: release_date,
+			titles: title,
+			voteaverages: vote_average,
+			moviesId: movies_id
+		});
 		// this.fetchMoviesData(58);
 	}
 
