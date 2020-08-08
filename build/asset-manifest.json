@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/JohnnyDeppInDeppth/static/css/main.f4f7e430.chunk.css",
+    "main.js": "/JohnnyDeppInDeppth/static/js/main.51c135ad.chunk.js",
+    "main.js.map": "/JohnnyDeppInDeppth/static/js/main.51c135ad.chunk.js.map",
+    "runtime-main.js": "/JohnnyDeppInDeppth/static/js/runtime-main.1b2e53cc.js",
+    "runtime-main.js.map": "/JohnnyDeppInDeppth/static/js/runtime-main.1b2e53cc.js.map",
+    "static/css/2.fb346933.chunk.css": "/JohnnyDeppInDeppth/static/css/2.fb346933.chunk.css",
+    "static/js/2.13b31d38.chunk.js": "/JohnnyDeppInDeppth/static/js/2.13b31d38.chunk.js",
+    "static/js/2.13b31d38.chunk.js.map": "/JohnnyDeppInDeppth/static/js/2.13b31d38.chunk.js.map",
+    "index.html": "/JohnnyDeppInDeppth/index.html",
+    "precache-manifest.2c9ee3a50ac8a433ec76db2837f71aba.js": "/JohnnyDeppInDeppth/precache-manifest.2c9ee3a50ac8a433ec76db2837f71aba.js",
+    "service-worker.js": "/JohnnyDeppInDeppth/service-worker.js",
+    "static/css/2.fb346933.chunk.css.map": "/JohnnyDeppInDeppth/static/css/2.fb346933.chunk.css.map",
+    "static/css/main.f4f7e430.chunk.css.map": "/JohnnyDeppInDeppth/static/css/main.f4f7e430.chunk.css.map",
+    "static/js/2.13b31d38.chunk.js.LICENSE.txt": "/JohnnyDeppInDeppth/static/js/2.13b31d38.chunk.js.LICENSE.txt",
+    "static/media/Blow.jpg": "/JohnnyDeppInDeppth/static/media/Blow.279aa3c1.jpg",
+    "static/media/style.scss": "/JohnnyDeppInDeppth/static/media/illustration-section-02.63d0555d.svg",
+    "static/media/feature-tile-icon-01.svg": "/JohnnyDeppInDeppth/static/media/feature-tile-icon-01.0f9928d7.svg",
+    "static/media/feature-tile-icon-02.svg": "/JohnnyDeppInDeppth/static/media/feature-tile-icon-02.bd39f304.svg",
+    "static/media/feature-tile-icon-03.svg": "/JohnnyDeppInDeppth/static/media/feature-tile-icon-03.66f37ba5.svg",
+    "static/media/feature-tile-icon-04.svg": "/JohnnyDeppInDeppth/static/media/feature-tile-icon-04.836acd10.svg",
+    "static/media/feature-tile-icon-05.svg": "/JohnnyDeppInDeppth/static/media/feature-tile-icon-05.fa9ba00b.svg",
+    "static/media/headerImage.jpg": "/JohnnyDeppInDeppth/static/media/headerImage.6738e25c.jpg",
+    "static/media/hollywoodvampires.jpeg": "/JohnnyDeppInDeppth/static/media/hollywoodvampires.cb1e5647.jpeg",
+    "static/media/raulduke.jpg": "/JohnnyDeppInDeppth/static/media/raulduke.79895f1a.jpg",
+    "static/media/swirllogo.svg": "/JohnnyDeppInDeppth/static/media/swirllogo.8621da33.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1b2e53cc.js",
+    "static/css/2.fb346933.chunk.css",
+    "static/js/2.13b31d38.chunk.js",
+    "static/css/main.f4f7e430.chunk.css",
+    "static/js/main.51c135ad.chunk.js"
+  ]
+}
