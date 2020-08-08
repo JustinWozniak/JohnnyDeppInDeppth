@@ -1,4 +1,5 @@
 {
+  "homepage": "http://justinwozniak.github.io/JohnnyDeppInDeppth",
   "name": "johnny-depp-in-deppth",
   "version": "0.1.0",
   "private": true,
@@ -28,7 +29,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "watch:sass": "node-sass ./src/assets/scss/sass/style.scss /src/App.css -w",
-    "compile:sass": "node-sass ./src/assets/scss/sass/style.scss /src/App.css"
+    "compile:sass": "node-sass ./src/assets/scss/sass/style.scss /src/App.css",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
